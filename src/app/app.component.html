@@ -20,6 +20,10 @@
 <div *ngIf="authService.user | async">
 	Logado como <b>{{(authService.user | async)?.email}}</b> |
 	<button (click)="logout()">Sair</button>
-
+	<hr>
+	<a [routerlink]="">Home</a>
+	<a [routerlink]="Listagem">Listagem</a>
+	<hr>
+	<router-outlet></router-outlet>
 
 </div>

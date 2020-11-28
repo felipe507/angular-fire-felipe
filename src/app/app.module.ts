@@ -5,7 +5,10 @@ import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AppComponent } from "./app.component";
 import { HelloComponent } from "./hello.component";
-import { AuthService } from './auth.service';
+import { AuthService } from "./auth.service";
+import { FirelistComponent } from "./firelist/firelist.component";
+import { RouterModule } from "@angular/router";
+import { IndexComponent } from "./index/index.component";
 
 @NgModule({
   imports: [
@@ -20,9 +23,18 @@ import { AuthService } from './auth.service';
       messagingSenderId: "540980371756",
       appId: "1:540980371756:web:fb9e7d29375c5cbacc4c89"
     }),
+    RouterModule.forRoot([
+      { path: "", component: IndexComponent },
+      { path: "listagem", component: FirelistComponent }
+    ]),
     AngularFireAuthModule
   ],
-  declarations: [AppComponent, HelloComponent],
+  declarations: [
+    AppComponent,
+    HelloComponent,
+    FirelistComponent,
+    IndexComponent
+  ],
   bootstrap: [AppComponent],
   providers: [AuthService]
 })
