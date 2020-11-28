@@ -21,8 +21,8 @@
 	Logado como <b>{{(authService.user | async)?.email}}</b> |
 	<button (click)="logout()">Sair</button>
 	<hr>
-	<a [routerlink]="">Home</a>
-	<a [routerlink]="listagem">Listagem</a>
+	<a [routerlink]="['']">Home</a>
+	<a [routerlink]="['listagem']">Listagem</a>
 	<hr>
 	<router-outlet></router-outlet>
 
